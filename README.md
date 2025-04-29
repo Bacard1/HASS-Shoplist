@@ -1,114 +1,115 @@
-<h1 align="center">Списък за пазаруване с изображения</h1>
+# Image shopping list
 
 <br>
 
-##  Подготовка:
-- Инсталирайте следните пакети от HACS или посетете хранилищата на следните линкове 🔽:
+##  Preparation:
+- Install the following packages from HACS or visit the repositories of the following links 🔽:
   - [Local Conditional card](https://github.com/PiotrMachowski/Home-Assistant-Lovelace-Local-Conditional-card)
   - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
   - [mini-graph-card](https://github.com/kalkih/mini-graph-card)
 
-  След инсталацията на пакетите рестартирайте своят Home Assistant и преминете към следващите стъпки 🔽:
+  After installing the packages, restart your Home Assistant and move on to the next steps 🔽:
 
-## Създаване:
-- **Създаване на нов списък:** създайте нов списък към, който ще препращате имената на натиснатите от Вас артикули. 🔽:
+## Creation:
+- **Create a new list: ** Create a new list to which you will forward the names of the items you have pressed.🔽:
   
   <img align="center" src="\Statik\GIF\create_list.gif">      
 
-- **Табло Shoplist:** Създайте ново Табло с името "Shoplist" и там ще създадем всички необходими списъци. 🔽:
+- **SHOPLIST Dashboard: ** Create a new panel named "Shoplist" and there we will create all the necessary lists.🔽:
 
 
   <img align="center" src="\Statik\GIF\create_shoplist_dashboard.gif">  
  
   
-  - Добавете, като нова карта списъкът, който ще използвате. 🔽:
+  - Add as a new card the list you will use.🔽:
     
     ![image](https://github.com/user-attachments/assets/44c76922-a2d6-4bc2-bfb1-e4b05acbd0a8)
 
     Ръчно добавяне на карта 🔽:
     
-    🛠️
     
-        type: todo-list
-        entity: todo.list
+    ```yaml
+    type: todo-list
+    entity: todo.list
+    ```    
 
-  - **Артикули:** неоходимо е еднократно създаване на "Помощник Бутон", който ще използваме за добавянето на артикулите. Не е необходимо създаването за всеки един артикул, понеже така или иначе не е възможно натискането на няколко артикула едновременно. Бутонът позволява при всяко добавяне да се правят индивидуални промени. 🔽:
+
+  - ** Items: ** It is necessary a one -time creation of an "assistant button" that we will use to add the items.It is not necessary to create for each item, because it is not possible to press several items at the same time.The button allows for each adding individual changes.🔽:
 
     <img align="center" src="\Statik\GIF\create_button_helper.gif"> 
    
-  - **Категории:** за всяка една категоря е необходимо да се създаде помощник. Ако използвате един и същ помощник за всички категории, при отваряне на една категория, ще се отварят и всички други. Като удобство, ще добавим и автоматизация, която ще затваря всички останали категории при отваряне на категория. 🔽:
+  - ** Categories: ** For each category it is necessary to create an assistant.If you use the same helper for all categories, all others will open when opening one category.In convenience, we will also add automation that will close all other categories when opening a category.🔽:
     
     <img align="center" src="\Statik\GIF\create_Namenskategorie_helpers.gif"> 
 
-    След създаването на помощникът за категорията, я добавете като карта в таблото. 🔽:
+    After creating the helper for the category, add it as a card in the dashboard.🔽:
 
     <img align="center" src="\Statik\GIF\shoplist_und_kategodie.gif"> 
 
-    Ръчно добавяне на карта 🔽:
-
-    🛠️
-    
-        type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: input_boolean.namenskategorie
-                tap_action:
-                  action: toggle
-                name: Namenskategorie
-                image: https://github.com/Bacard1/Home-Assistant-Shoplist/blob/main/IMG/shoplist/Alkoholische-Getr%C3%A4nke/%D0%91%D0%B8%D1%80%D0%B0.png?raw=true
-          - type: conditional
-            conditions:
-              - condition: state
-                entity: input_boolean.namenskategorie
-                state: "on"
-              - condition: state
-                entity: input_boolean.namenskategorie
-                state_not: "off"
-            card:
-              type: grid
-              cards:
-                - show_state: false
-                  show_name: true
-                  camera_view: auto
-                  type: picture-entity
-                  entity: input_button.artikul
-                  image: https://github.com/Bacard1/Home-Assistant-Shoplist/blob/main/IMG/shoplist/Alkoholische-Getr%C3%A4nke/%D0%91%D0%B8%D1%80%D0%B0.png?raw=true
+    Manual Add card 🔽:
+    ```bash
+    type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - entity: input_boolean.namenskategorie
+            tap_action:
+              action: toggle
+            name: Namenskategorie
+            image: https://github.com/Bacard1/Home-Assistant-Shoplist/blob/main/IMG/shoplist/Alkoholische-Getr%C3%A4nke/%D0%91%D0%B8%D1%80%D0%B0.png?raw=true
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: input_boolean.namenskategorie
+            state: "on"
+          - condition: state
+            entity: input_boolean.namenskategorie
+            state_not: "off"
+        card:
+          type: grid
+          cards:
+            - show_state: false
+              show_name: true
+              camera_view: auto
+              type: picture-entity
+              entity: input_button.artikul
+              image: https://github.com/Bacard1/Home-Assistant-Shoplist/blob/main/IMG/shoplist/Alkoholische-Getr%C3%A4nke/%D0%91%D0%B8%D1%80%D0%B0.png?raw=true
+              name: Arikul 1
+              theme: yourname
+              tap_action:
+                action: call-service
+                service: shopping_list.add_item
+                service_data:
                   name: Arikul 1
-                  theme: yourname
-                  tap_action:
-                    action: call-service
-                    service: shopping_list.add_item
-                    service_data:
-                      name: Arikul 1
-                  card_mod:
-                    style: |
-                      ha-card {                
-                        border: 1;
-                        width: 90%;
-                        height: 90%;    
-                      }              
-        card_mod:
-          style: |
-            ha-card {
-              --ha-card-background: none;
-              border: 2; 
-            }
+              card_mod:
+                style: |
+                  ha-card {                
+                    border: 1;
+                    width: 90%;
+                    height: 90%;    
+                  }              
+    card_mod:
+      style: |
+        ha-card {
+          --ha-card-background: none;
+          border: 2; 
+        }
+    ```
     
-      ⚠️ Вкарайте картата с кодът точно така както е даден, като замените само "- entity: input_boolean.namenskategorie" с името на помошникът (категория). След като го запазите, можете лесно да промените останалите работи през графиката на картата или да добавите нов артикул. 🔽:
+      ⚠️ Insert the card card exactly as it is given, replacing only "- entity: input_boolean.Namenskategorie" with the name of the help (category).Once you save it, you can easily change the rest of the card graphics or add a new item.🔽:
   
   
       <img align="center" src="\Statik\GIF\kategorie_card_edit.gif">
     
-  - [ТУК](\IMG) ще намерите изчерпателна колекция от изображения за вашият списък за пазаруване, разделени по категории.
+  - [HERE] (\ IMG) you will find an exhaustive collection of images for your shopping list, divided by categories.
   
 <br>
 
 ##  Автоматизации:
 
-  ⚠️ Автоматизациите по долу не са задължителни, а препоръчителни. Липсата им няма да попречи на работата на списъкът за пазаруване, но ще я улесни.
+  ⚠️ Below automation is optional but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
 
-- **1. Следи за вече отметнати продукти и активира чистача. 🔽:**
+- ** 1.It monitors the products already removed and activates the cleaner.🔽: **
 
    🛠️
   ```html  
@@ -132,10 +133,10 @@
       action: automation.trigger
   ```
 
-- **2. Чистач на списък с отметнати продукти -** тази автоматизация ще изчиства всички отметнати продукти след престой от 10 минути. Това не ви ангажира и обърква при ежедневна употреба. 🔽:
+- ** 2.Cleaner of the list of removed products -** This automation will clear all the products removed after a 10 -minute stay.This does not engage you and confuses you with daily use.🔽:
 
    🛠️
-  ```html
+  ```yaml
   alias: ""
   description: ""
   triggers:
@@ -164,9 +165,9 @@
       action: shopping_list.clear_completed_items
   ```
 
-  ⚠️ Автоматизации 1 и 2 вървят комлект понеже едната активира другата!
+  ⚠️ Automation 1 and 2 are set aside because one activates the other!
 
-- **3. Само една отворена категория:** тази автоматизация не позволява отварянето на повече от една категория. При отваряне на категория, всички останали се затварят. 🔽:
+- ** 3.Only one open category: ** This automation does not allow more than one category.When opening a category, everyone else is closed.🔽:
 
    🛠️
   ```html
@@ -191,10 +192,10 @@
   mode: single
   ```
   
-- **4. Нов артикул в списъкът за пазаруване:** изпраща известие до всички мобилни устройства за добавянето на нов артикул към списъкът.🔽:
+- ** 4.New item in the shopping list: ** sends a notice to all mobile devices to add a new item to the list.🔽:
 
   🛠️
-  ```html
+  ```yaml
   alias: ""
   triggers:
     - event_type: shopping_list_updated
