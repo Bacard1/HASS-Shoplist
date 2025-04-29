@@ -47,7 +47,7 @@
     <img align="center" src="\Statik\GIF\shoplist_und_kategodie.gif"> 
 
     Manual Add card 🔽:
-    ```bash
+    ```yaml
     type: vertical-stack
     cards:
       - type: entities
@@ -112,7 +112,7 @@
 - ** 1.It monitors the products already removed and activates the cleaner.🔽: **
 
    🛠️
-  ```html  
+  ```yaml  
   alias: ""
   description: ""
   triggers:
