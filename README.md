@@ -105,7 +105,7 @@
   
 <br>
 
-##  Автоматизации:
+##  Automation:
 
   ⚠️ Below automation is optional but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
 
