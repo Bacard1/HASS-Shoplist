@@ -112,7 +112,7 @@ card_mod:
 ![kategodie card edit](/img/kategorie_card_edit.gif)
 
 - [HERE](https://github.com/Bacard1/icon-set-project/tree/main/HASS-Shoplist) you will find an exhaustive collection of images for your shopping list, divided by categories.
-- 
+  
 ## 🧲 Automation
 
 ⚠️ Automation below is not mandatory but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
