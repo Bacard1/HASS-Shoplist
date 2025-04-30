@@ -1,4 +1,5 @@
-# 🛒 HASS Image shopping list
+# 🛒 HASS IMAGE SHOPPLIST
+
 [![PayPal дарение](https://img.shields.io/badge/PayPal-Дари-синьо?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
 
 You create an easy -to -find list by easy and quickly finding your items using images sorted by categories.Family members are notified of the addition of an item.
@@ -7,11 +8,11 @@ You create an easy -to -find list by easy and quickly finding your items using i
 
 ## 📦 Content
 
-- [🛒 Списък за пазаруване с изображения](#-списък-за-пазаруване-с-изображения)
-  - [📦 Съдържание](#-съдържание)
-  - [🚀 Подготовка](#-подготовка)
-  - [🧰 Създаване](#-създаване)
-  - [🧲 Автоматизации](#-автоматизации)
+- [🛒 HASS IMAGE SHOPPLIST](#-hass-image-shopplist)
+  - [📦 Content](#-content)
+  - [🚀 Preparation](#-preparation)
+  - [🧰 Creation](#-creation)
+  - [🧲 Automation](#-automation)
 
 ---
 
@@ -36,7 +37,7 @@ After installing the packages, restart your Home Assistant and move on to the ne
 
 - Add as a new card the list you will use. 🔽:
   
-  ![image](https://github.com/user-attachments/assets/44c76922-a2d6-4bc2-bfb1-e4b05acbd0a8)
+![image](/img/todo_card.png)
 
 > Select a hand -adding card 🔽:.
 
@@ -218,6 +219,7 @@ actions:
         url: /shopping-list
     action: notify.notify
 ```
+
 <br>  
 
 > [!TIP]
