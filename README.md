@@ -1,4 +1,5 @@
 # 🛒 HASS Image shopping list
+[![PayPal дарение](https://img.shields.io/badge/PayPal-Дари-синьо?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
 
 You create an easy -to -find list by easy and quickly finding your items using images sorted by categories.Family members are notified of the addition of an item.
 
@@ -107,7 +108,8 @@ card_mod:
     }
 ```
 
-⚠️ Insert the card card exactly as it is given, replacing only "- entity: input_boolean.Namenskategorie" with the name of the help (category).Once you save it, you can easily change the rest of the card graphics or add a new item. 🔽:
+> [!WARNING]
+> Insert the card card exactly as it is given, replacing only "- entity: input_boolean.Namenskategorie" with the name of the help (category).Once you save it, you can easily change the rest of the card graphics or add a new item. 🔽:
 
 ![kategodie card edit](/img/kategorie_card_edit.gif)
 
@@ -115,7 +117,8 @@ card_mod:
   
 ## 🧲 Automation
 
-⚠️ Automation below is not mandatory but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
+> [!IMPORTANT]
+> Automation below is not mandatory but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
 
 - **1. It monitors the products already removed and activates the cleaner. 🔽:**
 
@@ -171,7 +174,8 @@ alias: ""
       action: shopping_list.clear_completed_items
 ```
 
-⚠️ Automation 1 and 2 are settled because one activates the other!
+> [!IMPORTANT]
+>Automation 1 and 2 are settled because one activates the other!
 
 - **3. Only one open category:** This automation does not allow more than one category.When opening a category, everyone else is closed.🔽:
 
@@ -213,4 +217,9 @@ actions:
         clickAction: /shopping-list
         url: /shopping-list
     action: notify.notify
-```  
+```
+<br>  
+
+> [!TIP]
+> If you like this project, [here](https://github.com/Bacard1?tab=repositories) You will find more interesting borders made by me. <br>
+> If you have difficulty or have questions, do not hesitate to contact me.
