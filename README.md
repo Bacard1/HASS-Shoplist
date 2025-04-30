@@ -27,11 +27,11 @@ After installing the packages, restart your Home Assistant and move on to the ne
 
 - **Create a new list:** Create a new list to which you will forward the names of the items you have pressed. 🔽:
   
-![create list](\Statik\GIF\create_list.gif)
+![create list](/Statik/GIF/create_list.gif)
 
 - **SHOPLIST Dashboard:** Create a new panel named "Shoplist" and there we will create all the necessary lists. 🔽:
 
-![create dashboard](\Statik\GIF\create_shoplist_dashboard.gif)
+![create dashboard](/Statik/GIF/create_shoplist_dashboard.gif)
 
 - Add as a new card the list you will use. 🔽:
   
@@ -46,15 +46,15 @@ entity: todo.list
   
 - **Articles:** It is irrelevant to create a "assistant button" one that we will use to add the items.It is not necessary to create for each item, because it is not possible to press several items at the same time.The button allows for each adding individual changes. 🔽:
 
-![create button](\Statik\GIF\create_button_helper.gif)
+![create button](/Statik/GIF/create_button_helper.gif)
 
 - **Categories:** For each category it is necessary to create an assistant.If you use the same helper for all categories, all others will open when opening one category.In convenience, we will also add automation that will close all other categories when opening a category.🔽:
 
-![create nameskategorie](\Statik\GIF\create_Namenskategorie_helpers.gif)
+![create nameskategorie](/Statik/GIF/create_Namenskategorie_helpers.gif)
 
 After creating the helper for the category, add it as a card in the dashboard.🔽:
 
-![shoplist & categorie](\Statik\GIF\shoplist_und_kategodie.gif)
+![shoplist & categorie](/Statik/GIF/shoplist_und_kategodie.gif)
 
 > Select a hand -adding card 🔽:
 
@@ -109,7 +109,7 @@ card_mod:
 
 ⚠️ Insert the card card exactly as it is given, replacing only "- entity: input_boolean.Namenskategorie" with the name of the help (category).Once you save it, you can easily change the rest of the card graphics or add a new item. 🔽:
 
-![kategodie card edit](\Statik\GIF\kategorie_card_edit.gif)
+![kategodie card edit](/Statik/GIF/kategorie_card_edit.gif)
 
 - [HERE](https://github.com/Bacard1/icon-set-project/tree/main/HASS-Shoplist) you will find an exhaustive collection of images for your shopping list, divided by categories.
 - 
