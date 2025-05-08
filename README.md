@@ -1,3 +1,4 @@
+![BANNER](/img/banner.png)
 
 # 🛒 HASS SHOPPING LIST WITH IMAGES
 [![PayPal donation](https://img.shields.io/badge/PayPal-donation-синьо?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
