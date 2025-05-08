@@ -1,64 +1,66 @@
-# 🛒 HASS IMAGE SHOPPLIST
 
-[![PayPal дарение](https://img.shields.io/badge/PayPal-Дари-синьо?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
+# 🛒 HASS SHOPPING LIST WITH IMAGES
+[![PayPal donation](https://img.shields.io/badge/PayPal-donation-синьо?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
+![Script](https://img.shields.io/badge/logo-yaml-green?logo=yaml)
+[![Български](https://img.shields.io/badge/Български-език-green?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg)](BG.md)
 
-You create an easy -to -find list by easy and quickly finding your items using images sorted by categories.Family members are notified of the addition of an item.
+Easily create a shopping list by quickly finding your items with the help of images sorted by category. Family members are notified when an item is added.
 
 ---
 
-## 📦 Content
+## 📦 Contents
 
-- [🛒 HASS IMAGE SHOPPLIST](#-hass-image-shopplist)
-  - [📦 Content](#-content)
+- [🛒 HASS SHOPPING LIST WITH IMAGES](#-hass-shopping-list-with-images)
+  - [📦 Contents](#-contents)
   - [🚀 Preparation](#-preparation)
-  - [🧰 Creation](#-creation)
-  - [🧲 Automation](#-automation)
+  - [🧰 Setup](#-setup)
+  - [🧲 Automations](#-automations)
 
 ---
 
 ## 🚀 Preparation
 
-- Install the following packages from HACS or visit the repositories of the following links 🔽:
+- Install the following packages from HACS or visit their repositories 🔽:
   - [Local Conditional card](https://github.com/PiotrMachowski/Home-Assistant-Lovelace-Local-Conditional-card)
   - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
   - [mini-graph-card](https://github.com/kalkih/mini-graph-card)
 
-After installing the packages, restart your Home Assistant and move on to the next steps 🔽:
+  After installing the packages, restart your Home Assistant and proceed with the next steps 🔽:
 
-## 🧰 Creation
+## 🧰 Setup
 
-- **Create a new list:** Create a new list to which you will forward the names of the items you have pressed. 🔽:
+- **Create a new list:** create a new list where the names of the pressed items will be added. 🔽:
   
 ![create list](/img/create_list.gif)
 
-- **SHOPLIST Dashboard:** Create a new panel named "Shoplist" and there we will create all the necessary lists. 🔽:
+- **Shoplist Dashboard:** Create a new Dashboard named "Shoplist" where we will add all necessary lists. 🔽:
 
 ![create dashboard](/img/create_shoplist_dashboard.gif)
 
-- Add as a new card the list you will use. 🔽:
+- Add the list you will use as a new card. 🔽:
   
-![image](/img/todo_card.png)
+  ![image](/img/todo_card.png)
 
-> Select a hand -adding card 🔽:.
+> Choose manual card addition 🔽:
 
 ```yaml
 type: todo-list
 entity: todo.list
 ```
   
-- **Articles:** It is irrelevant to create a "assistant button" one that we will use to add the items.It is not necessary to create for each item, because it is not possible to press several items at the same time.The button allows for each adding individual changes. 🔽:
+- **Items:** you need to create a "Button Helper" once, which will be used for adding items. You don't need one for each item since pressing multiple items at once is not possible anyway. The button allows for individual changes during each addition. 🔽:
 
 ![create button](/img/create_button_helper.gif)
 
-- **Categories:** For each category it is necessary to create an assistant.If you use the same helper for all categories, all others will open when opening one category.In convenience, we will also add automation that will close all other categories when opening a category.🔽:
+- **Categories:** for each category, a helper needs to be created. If you use the same helper for all categories, opening one will open all. For convenience, we’ll add an automation to close all other categories when one is opened. 🔽:
 
 ![create nameskategorie](/img/create_Namenskategorie_helpers.gif)
 
-After creating the helper for the category, add it as a card in the dashboard.🔽:
+After creating the helper for the category, add it as a card in the dashboard. 🔽:
 
 ![shoplist & categorie](/img/shoplist_und_kategodie.gif)
 
-> Select a hand -adding card 🔽:
+> Choose manual card addition 🔽:
 
 ```yaml
 type: vertical-stack
@@ -108,20 +110,19 @@ card_mod:
       border: 2; 
     }
 ```
-
 > [!WARNING]
-> Insert the card card exactly as it is given, replacing only "- entity: input_boolean.Namenskategorie" with the name of the help (category).Once you save it, you can easily change the rest of the card graphics or add a new item. 🔽:
+> Insert the card with the code exactly as shown, replacing only "- entity: input_boolean.namenskategorie" with your helper's name (category). After saving, you can easily adjust the rest via the card's graphical interface or add new items. 🔽:
 
 ![kategodie card edit](/img/kategorie_card_edit.gif)
 
-- [HERE](https://github.com/Bacard1/icon-set-project/tree/main/HASS-Shoplist) you will find an exhaustive collection of images for your shopping list, divided by categories.
-  
-## 🧲 Automation
+- [HERE](https://github.com/Bacard1/icon-set-project/tree/main/HASS-Shoplist) you’ll find a complete image collection for your shopping list, sorted by category.
+
+## 🧲 Automations
 
 > [!IMPORTANT]
-> Automation below is not mandatory but recommended.Their lack will not interfere with the work of the shopping list, but it will make it easier.
+> The automations below are optional but recommended. Not having them won’t break the shopping list, but they will improve usability.
 
-- **1. It monitors the products already removed and activates the cleaner. 🔽:**
+- **1. Monitor checked-off items and trigger the cleaner. 🔽:**
 
 ```yaml
 alias: ""
@@ -144,7 +145,7 @@ alias: ""
       action: automation.trigger
 ```
 
-- **2. Cleaner of a list of removed products -** This automation will clean all the products you have been disposed of after a 10 -minute stay.This does not engage you and confuses you with daily use.🔽:
+- **2. Cleaner for checked-off items -** this automation clears all checked items after 10 minutes, so they don’t clutter your list during daily use. 🔽:
 
 ```yaml
 alias: ""
@@ -175,10 +176,10 @@ alias: ""
       action: shopping_list.clear_completed_items
 ```
 
-> [!IMPORTANT]
->Automation 1 and 2 are settled because one activates the other!
+> [!CAUTION]
+> Automations 1 and 2 work together – one triggers the other!
 
-- **3. Only one open category:** This automation does not allow more than one category.When opening a category, everyone else is closed.🔽:
+- **3. Only one open category:** this automation ensures that only one category is open at a time. When one is opened, the others are closed. 🔽:
 
 ```yaml
 alias: ""
@@ -202,7 +203,7 @@ actions:
 mode: single
 ```
   
-- **4. New item in the shopping list:** Sends notification to all mobile devices to add a new item to the list.🔽:
+- **4. New item in shopping list:** sends a notification to all mobile devices when a new item is added. 🔽:
 
 ```yaml
 alias: ""
@@ -218,10 +219,9 @@ actions:
         clickAction: /shopping-list
         url: /shopping-list
     action: notify.notify
-```
-
-<br>  
+```  
+<br>
 
 > [!TIP]
-> If you like this project, [here](https://github.com/Bacard1?tab=repositories) You will find more interesting borders made by me. <br>
-> If you have difficulty or have questions, do not hesitate to contact me.
+> If you liked this project, [HERE](https://github.com/Bacard1?tab=repositories) you’ll find more interesting repositories I’ve made.<br>
+> If you encounter any difficulties or have questions, don’t hesitate to contact me.
