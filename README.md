@@ -5,7 +5,22 @@
 ![Script](https://img.shields.io/badge/logo-yaml-green?logo=yaml)
 [![Български](https://img.shields.io/badge/Български-език-green?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg)](BG.md)
 
-Easily create a shopping list by quickly finding your items with the help of images sorted by category. Family members are notified when an item is added.
+This repository provides a custom shopping list interface for Home Assistant, designed to enhance the native functionality with visual item representation. It allows you to easily add, manage, and organize shopping items with images grouped by categories for faster recognition and convenience.
+
+Key Features:
+
+🧠 Quick item identification using images
+
+📦 Organized by categories for better structure
+
+🏠 Full Home Assistant integration
+
+📱 Mobile and desktop responsive
+
+🇧🇬 Includes Bulgarian language support
+
+This solution is perfect for households using Home Assistant who want a more intuitive and visually enhanced shopping experience.
+Feel free to contribute or adapt it to your needs!
 
 ---
 
