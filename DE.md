@@ -1,13 +1,19 @@
 ![BANNER](/img/banner.png)  
 
 # 🛒 HASS EINKAUFSLISTE MIT BILDERN  
-[![Home Assistant](https://img.shields.io/badge/🏠_Home_Assistant-41BDF5?logo=homeassistant)](https://www.home-assistant.io/) [![Donate via PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)  
-![Script](https://img.shields.io/badge/logo-yaml-green?logo=yaml)  
-[![Български](https://img.shields.io/badge/BG_Български-език-green?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg  
-)](BG.md)  
-[![Deutch](https://img.shields.io/badge/DE_Deutsche-sprache-green?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg  
-)](DE.md)  
-[![English](https://img.shields.io/badge/EN_English-language-green?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg)](README.md)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=ff00d8)](https://opensource.org/licenses/MIT)
+![GitHub last commit](https://img.shields.io/github/last-commit/Bacard1/HASS-Shoplist.svg?color=ff00d8)
+[![hacs_badge](https://img.shields.io/badge/HACS-2025.5.3-orange.svg?color=ff00d8)](https://github.com/hacs/integration)
+
+[![Home Assistant](https://img.shields.io/badge/.-HOME_ASSISTANT-blue?logo=homeassistant)](https://www.home-assistant.io/) 
+[![Donate via PayPal](https://img.shields.io/badge/PayPal-DONATE-blue?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=AAWFZVF2XCP5A)
+![Script](https://img.shields.io/badge/Script-YAML-blue?logo=yaml)
+
+[![Български](https://img.shields.io/badge/BG-ЕЗИК-gree?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg
+)](BG.md)
+[![Deutch](https://img.shields.io/badge/DE-SPRACHE-gree?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg
+)](DE.md)
+[![English](https://img.shields.io/badge/EN-LANGUAGE-gree?logo=translate&labelColor=gray&style=flat-square&link=https://example.com/bg)](README.md)
 
 Dieses Repository bietet eine benutzerdefinierte Einkaufslisten-Oberfläche für Home Assistant, die die Standardfunktionalität durch visuelle Produktdarstellungen verbessert. Es ermöglicht das einfache Hinzufügen, Verwalten und Sortieren von Artikeln mit Bildern, gruppiert nach Kategorien für schnelle Erkennung und Komfort.  
 
@@ -27,10 +33,10 @@ Das Projekt ist offen für Vorschläge und Verbesserungen!
 ## 📦 Inhalt  
 
 - [🛒 HASS EINKAUFSLISTE MIT BILDERN](#-hass-einkaufsliste-mit-bildern)
-	- [📦 Inhalt](#-inhalt)
-	- [🚀 Vorbereitung](#-vorbereitung)
-	- [🧰 Erstellung](#-erstellung)
-	- [🧲 Automatisierungen](#-automatisierungen)
+  - [📦 Inhalt](#-inhalt)
+  - [🚀 Vorbereitung](#-vorbereitung)
+  - [🧰 Erstellung](#-erstellung)
+  - [🧲 Automatisierungen](#-automatisierungen)
 
 ---  
 
